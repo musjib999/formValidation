@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>split</title>
+    <style>
+        center{
+            background-color: aqua;
+            width: 30%;
+            height: 500px;
+            margin-top: 5%;
+            margin-left: 35%;
+            box-shadow: gray;
+            border-radius: 2px; 
+            border:1px solid black;  
+        }
+        input{
+            box-shadow: gray;
+            border-radius: 2px; 
+            border:1px solid gray;  
+        }
+        body{
+            background-color: rgb(43, 135, 138);
+        }
+    </style>
+
+    <script type="text/javascript">
+    function javascriptForm(){
+
+        //Getting all input text object
+        var firstname = document.formValidation.firstName.value;
+        var surname = document.formValidation.surName.value;
+        var others = document.formValidation.others.value;
+        var subject = document.formValidation.subject.value;
+        var message = document.formValidation.message.value;
+        var fullname = firstname  +  " " + surname;
+
+        //an "if" statement
+         if (firstname==""){
+          alert("Firstname is required");
+         return false;
+         }else if (firstname.length<3){
+             alert("Firstname cant be less than 3 character");
+             return false;
+         }else if (surname==""){
+             alert("Surname is required");
+             return false;
+         }else if (surname.length<3){
+             alert("Surname cant't be less than 3 character");
+             return false;
+          }else if (fullname!==""&& subject!==""&& message!==""){
+             alert("Welcome: " +fullname);
+             return false;
+         }else if (subject==""){
+            alert("Subject is required");
+            return false;
+         }else if (subject.length<3){
+             alert("firstname cant be less than 3 character");
+             return false;
+            
+        }else if (message==""){
+            alert("A message is required");
+            return false;
+         }
+     
+    }
+    
+    </script>
+    <title>javascript form</title>
+</head>
+<body>
+    <center>
+        <h1>javascript formValidation</h1>
+        <form name="formValidation" onsubmit="return javascriptForm()">
+            <div >
+                 <input type="text" name="firstName" placeholder="firstname"><br><br>
+            </div>
+           <div>
+                 <input type="text" name="surName" placeholder="surname"><br><br>
+           </div>
+           <div>
+                <input type="text" name="others" placeholder="others"><br><br>
+           </div>
+           <div>
+                <input type="text" name="subject" placeholder="subject"><br><br>
+           </div>
+           <div>
+                <input type="text" name="message" placeholder="message"><br><br>
+           </div>
+           <div>
+                <input type="submit" value="Submit"> 
+           </div>
+                          
+        </form>
+    </center>
+    
+</body>
+</html>
